@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>visualize LCG</title>
+  <link rel="stylesheet" type="text/css" href="./style.css">
+  <script src="./js/lib/d3.v5.min.js"></script>
+  <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<body id="main">
+<div class="item">
+  <h1>Linear congruential generator</h1>
+  Generator is defined by recurrence relation
+
+  <div style="margin: 1em;">
+    <math>
+      <msub>
+        <mi>s</mi>
+        <mrow>
+          <mi>i</mi>
+          <mo>+</mo>
+          <mn>1</mn>
+        </mrow>
+      </msub>
+
+      <mo>=</mo>
+
+      <mfenced>
+        <mrow>
+          <mi>a</mi>
+          <mo>&InvisibleTimes;</mo>
+          <msub>
+            <mi>s</mi>
+            <mi>i</mi>
+          </msub>
+          <mo>+</mo>
+          <mi>c</mi>
+        </mrow>
+      </mfenced>
+
+      <mrow>
+        <mo>mod</mo>
+        <mi>M</mi>
+      </mrow>
+    </math>
+  </div>
+
+  <div style="margin: 1em;">
+    <math>
+      <msub>
+        <mi>U</mi>
+        <mi>i</mi>
+      </msub>
+
+      <mo>=</mo>
+
+      <mfrac>
+        <msub>
+          <mi>s</mi>
+          <mi>i</mi>
+        </msub>
+        <mi>M</mi>
+      </mfrac>
+    </math>
+  </div>
+
+  <div style="margin: 1em;">The plot of 5000 pairs
+    <math>
+      <mfenced>
+        <msub>
+          <mi>U</mi>
+          <mi>i</mi>
+        </msub>
+        <mrow>
+          <msub>
+            <mi>U</mi>
+            <mrow>
+              <mi>i</mi>
+              <mo>+</mo>
+              <mn>1</mn>
+            </mrow>
+          </msub>
+        </mrow>
+      </mfenced>
+    </math>
+    <div id="bar">Plot color scale as </div>
+    <a href="https://en.wikipedia.org/wiki/Linear_congruential_generator#Parameters_in_common_use" target="_blank">Parameters in common use</a>
+  </div>
+
+  <div class="parameter">
+    <div>
+      <math><mi>a</mi></math>:
+      <input type="number" step="1" class="tbox" id="param_a" value=1229></input>
+      <input type="checkbox" class="countup-check">countup</input>
+    </div>
+    <div>
+      <math><mi>c</mi></math>:
+      <input type="number" step="1" class="tbox" id="param_c" value=1></input>
+      <input type="checkbox" class="countup-check">countup</input>
+    </div>
+    <div>
+      <math><mi>M</mi></math>:
+      <input type="number" step="1" class="tbox" id="param_m" value=2048></input>
+      <input type="checkbox" class="countup-check">countup</input>
+    </div>
+
+    <div id="generate-btn">
+      <input type="button" value="generate">
+    </div>
+    <div id="start-stop-btn" hidden>
+      <input type="button" id="start-btn" value="start"></input>
+      <input type="button" id="stop-btn" value="stop" disabled></input>
+    </div>
+
+  </div>
+</div>
+
+<script src="./js/main.js"></script>
+</body>
+</html>

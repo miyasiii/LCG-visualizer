@@ -1,0 +1,13 @@
+.item{
+  float: left;
+}
+
+.parameter{
+  text-align: right;
+}
+
+.tbox{
+  padding-top: 4px;
+  padding-bottom: 2px;
+  text-align: right;
+}

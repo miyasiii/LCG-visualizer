@@ -133,7 +133,6 @@ var w = "5em";
 var h = "1em";
 var number = 100;
 var bar = d3.select("#bar").append("svg").attr("width",w).attr("height",h);
-bar.attr("viewBox",0 + " " + 0 + " " + w + " " + h);
 var color = d3.scaleSequential(d3.interpolateRainbow).domain([0,number]);
 var a = bar.append("defs").append("linearGradient").attr("id",'myBar');
 for(i=0;i<number;i++){
